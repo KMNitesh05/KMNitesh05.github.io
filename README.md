@@ -1,7 +1,5 @@
 - 👋 Hi, I’m Nitesh Kumar (@KMNitesh05)
 - 👀 I’m interested in Computational Chemistry and Network Theory 
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
 - 📫 nitesh.kumar@wsu.edu
 
 <!---
