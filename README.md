@@ -1,4 +1,4 @@
-- 👋 Hi, I’m Nitesh Kumar (@KMNitesh05)
+- 👋 Hi, I’m Nitesh Kumar (@KMNitesh05) PhD Candidate, Washington State University, Pullman.
 - 👀 I’m interested in Computational Chemistry and Network Theory 
 - 📫 nitesh.kumar@wsu.edu
 
