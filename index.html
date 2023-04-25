@@ -40,6 +40,13 @@
       padding: 20px;
       background-color: white;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      right: 20px;
     }
 
     @media screen and (max-width: 800px) {
@@ -47,11 +54,17 @@
         padding-left: 10px;
         padding-right: 10px;
       }
+
+      .logo {
+        top: 10px;
+        right: 10px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <img src="logo.jpeg" alt="Logo" class="logo">
     <h1>NITESH KUMAR, Ph.D.</h1>
     <p>Research Assistant</p>
     <p>Fulmer-275, Department of Chemistry</p>
