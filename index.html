@@ -56,7 +56,8 @@
       border-radius: 50%;
       overflow: hidden;
       margin: 20px auto;
-      border: 3px solid #004d99;
+      border: 3px solid #004d99; /* Default border color */
+      transition: border-color 0.5s; /* Smooth transition for border color */
     }
 
     .profile-photo img {
@@ -91,7 +92,7 @@
     }
 
     .theme-toggle svg {
-      fill: white; /* Set the SVG icon color to white */
+      fill: #add8e6; /* Set the SVG icon color to light blue */
     }
 
     .dark-mode {
@@ -107,12 +108,20 @@
       color: #000000; /* Set paragraph and link color to black */
     }
 
+    .dark-mode .profile-photo {
+      border-color: #b0b0b0; /* Change border color to grey in dark mode */
+    }
+
     .dark-mode .navigation {
       background: #333333;
     }
 
     .dark-mode .navigation a {
       color: #b0b0b0; /* Keep navigation link color the same */
+    }
+
+    .dark-mode .theme-toggle svg {
+      fill: #b0b0b0; /* Change toggle button color to light grey in dark mode */
     }
 
     .social-icons {
