@@ -88,17 +88,33 @@
       border: none;
       cursor: pointer;
       margin-left: 10px; /* Adjust as needed for spacing */
-      flex: 1 0 auto; /* Make button responsive */
     }
-    
+
     .theme-toggle svg {
-      fill: #add8e6; /* Set the SVG icon color to light blue */
-        transition: fill 0.5s; /* Smooth transition for fill color */
-      }
-      
-      .dark-mode .theme-toggle svg {
-        fill: #b0b0b0; /* Change toggle button color to light grey in dark mode */
-      }
+      fill: white; /* Set the SVG icon color to white */
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #000000; /* Set font color to black */
+    }
+
+    .dark-mode h1, .dark-mode h2 {
+      color: #000000; /* Set heading color to black */
+    }
+
+    .dark-mode p, .dark-mode a {
+      color: #000000; /* Set paragraph and link color to black */
+    }
+
+    .dark-mode .navigation {
+      background: #333333;
+    }
+
+    .dark-mode .navigation a {
+      color: #b0b0b0; /* Keep navigation link color the same */
+    }
+
       
       .profile-photo {
         width: 150px;
