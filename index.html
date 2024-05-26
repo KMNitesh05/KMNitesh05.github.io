@@ -72,12 +72,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-wrap: wrap; /* Allow items to wrap */
     }
 
     .navigation a {
       color: white;
       margin: 0 15px;
       font-size: 18px;
+      flex: 1 0 auto; /* Make links responsive */
     }
 
     .theme-toggle {
@@ -85,6 +87,7 @@
       border: none;
       cursor: pointer;
       margin-left: 10px; /* Adjust as needed for spacing */
+      flex: 1 0 auto; /* Make button responsive */
     }
 
     .theme-toggle svg {
@@ -132,6 +135,15 @@
       .container {
         padding-left: 20px;
         padding-right: 20px;
+      }
+
+      .navigation {
+        flex-direction: row; /* Ensure items are in a row */
+      }
+
+      .navigation a, .theme-toggle {
+        flex: 1 1 100%; /* Allow items to take full width if needed */
+        margin: 5px 0; /* Adjust margin for better spacing */
       }
     }
   </style>
