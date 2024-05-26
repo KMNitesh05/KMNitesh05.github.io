@@ -10,6 +10,8 @@
       margin: 0;
       padding: 0;
       background-color: #f3f3f3;
+      color: #000;
+      transition: background-color 0.5s, color 0.5s;
     }
     
     h1, h2 {
@@ -74,7 +76,31 @@
       margin: 0 15px;
       font-size: 18px;
     }
-    
+
+    .theme-toggle {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    .dark-mode h1, .dark-mode h2 {
+      color: #ffffff;
+    }
+
+    .dark-mode .navigation {
+      background: #333333;
+    }
+
+    .dark-mode .navigation a {
+      color: #ffffff;
+    }
+
     @media screen and (max-width: 800px) {
       .container {
         padding-left: 20px;
@@ -84,12 +110,15 @@
   </style>
 </head>
 <body>
+  <div class="theme-toggle">
+    <img src="your-light-dark-icon.png" alt="Toggle Theme" width="30" height="30" onclick="toggleTheme()">
+  </div>
+  
   <div class="navigation">
     <a href="#home">Home</a>
     <a href="#research">Research</a> 
     <a href="#publications">Publications</a>
     <a href="#science-illustration">Science Illustration</a>
-
   </div>
   
   <div class="container" id="home">
@@ -158,6 +187,11 @@
     
     <!-- <h2>Simplicial Complex Playground</h2> -->
     <!-- <iframe src="simplicial_complex_on_points.html" width="800" height="700"></iframe> -->
-</div>
+    <script>
+      function toggleTheme() {
+        document.body.classList.toggle('dark-mode');
+      }
+    </script>
+  </div>
 </body>
 </html>
