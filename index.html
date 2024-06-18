@@ -15,6 +15,16 @@
       transition: background-color 0.5s, color 0.5s;
     }
 
+    #DynamicPointsCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Ensure it is behind the content */
+      pointer-events: none; /* Allow clicks to pass through */
+    }
+
     h1, h2 {
       color: #004d99;
     }
@@ -188,6 +198,7 @@
   </style>
 </head>
 <body>
+  <canvas id="DynamicPointsCanvas"></canvas>
   <div class="navigation">
     <a href="#home">Home</a>
     <a href="#research">Research</a> 
@@ -436,5 +447,13 @@
       initDynamicPoints();
     });
   </script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+<script language="javascript" src="JS/renderDynamicPoints.js"></script>
+<script>
+  jQuery(document).ready(function() {
+    // Initialize the animation on document ready
+    initDynamicPoints();
+  });
+</script>
 </body>
 </html>
