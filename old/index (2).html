@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NITESH KUMAR, Ph.D.</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f3f3;
+      color: #000;
+      transition: background-color 0.5s, color 0.5s;
+    }
+    
+    h1, h2 {
+      color: #004d99;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    h2 {
+      text-align: left;
+      margin-top: 40px;
+    }
+
+    p {
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 20px auto;
+      border: 3px solid #004d99; /* Default border color */
+      transition: border-color 0.5s; /* Smooth transition for border color */
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .navigation {
+      text-align: center;
+      background: #004d99;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap; /* Allow items to wrap */
+    }
+
+    .navigation a {
+      color: white;
+      margin: 0 15px;
+      font-size: 18px;
+      flex: 1 0 auto; /* Make links responsive */
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-left: 10px; /* Adjust as needed for spacing */
+    }
+
+    .theme-toggle svg {
+      fill: white; /* Set the SVG icon color to white */
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #000000; /* Set font color to black */
+    }
+
+    .dark-mode h1, .dark-mode h2 {
+      color: #000000; /* Set heading color to black */
+    }
+
+    .dark-mode p, .dark-mode a {
+      color: #000000; /* Set paragraph and link color to black */
+    }
+
+    .dark-mode .navigation {
+      background: #333333;
+    }
+
+    .dark-mode .navigation a {
+      color: #b0b0b0; /* Keep navigation link color the same */
+    }
+
+      
+      .profile-photo {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 20px auto;
+        border: 3px solid #004d99; /* Default border color */
+        transition: border-color 0.5s; /* Smooth transition for border color */
+      }
+      
+      .dark-mode .profile-photo {
+        border-color: #b0b0b0; /* Change border color to grey in dark mode */
+      }
+
+    
+    .dark-mode .profile-photo {
+      border-color: #b0b0b0; /* Change border color to grey in dark mode */
+    }
+
+
+    .dark-mode .navigation {
+      background: #333333;
+    }
+
+    .dark-mode .navigation a {
+      color: #b0b0b0; /* Keep navigation link color the same */
+    }
+
+    .dark-mode .theme-toggle svg {
+      fill: #b0b0b0; /* Change toggle button color to light grey in dark mode */
+    }
+
+    .social-icons {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+      margin: 0 10px;
+      transition: transform 0.3s;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    @media screen and (max-width: 800px) {
+      .container {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .navigation {
+        flex-direction: row; /* Ensure items are in a row */
+      }
+
+      .navigation a, .theme-toggle {
+        flex: 1 1 100%; /* Allow items to take full width if needed */
+        margin: 5px 0; /* Adjust margin for better spacing */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navigation">
+    <a href="#home">Home</a>
+    <a href="#research">Research</a> 
+    <a href="#publications">Publications</a>
+    <a href="#software">Software</a> <!-- Added Software link -->
+    <a href="#science-illustration">Science Illustration</a>
+    <a href="#news">News</a>
+
+    <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite">
+      <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+        <mask class="moon" id="moon-mask">
+          <rect x="0" y="0" width="100%" height="100%" fill="white" />
+          <circle cx="24" cy="10" r="6" fill="black" />
+        </mask>
+        <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+        <g class="sun-beams" stroke="currentColor">
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </g>
+      </svg>
+    </button>
+  </div>
+  
+  <div class="container" id="home">
+    <div class="profile-photo">
+      <img src="IMG-4525.jpg" alt="Nitesh Kumar"> <!-- Placeholder for your photo -->
+    </div>
+    
+    <h1>NITESH KUMAR, Ph.D.</h1>
+    <p>Postdoctoral Research Associate</p>
+    <p>Chemical Science Division</p>
+    <p>Oak Ridge National Lab</p>
+    <p>Oak Ridge, Tennessee, USA</p>
+    <p>
+    <a href="https://www.linkedin.com/in/kmnitesh">
+    Connect at LinkedIn <i class="fa fa-linkedin-square" style="font-size:24px;color:#0077B5;"></i>
+    </a>
+    </p>
+    <p>+1(509)-332-9743</p>
+    <p>niteshgoesactive@gmail.com</p>
+
+    <h2>PROFESSIONAL APPOINTMENTS</h2>
+      <p>Postdoctoral Research Associate - Computational Chemist, ORNL, Oak-ridge, TN, USA (2023-present)</p>
+      <p>Research Associate, University of Utah, Salt Lake City, UT, USA (2023-2023)</p>
+      <p>PNNL-WSU DGRP Fellow, PNNL, Richland, WA, USA (2019-2023)</p>
+
+    <h2>EDUCATION</h2>
+
+    <p>Ph.D. Physical Chemistry, Washington State University, Pullman, WA, USA (2023)</p>
+    <p>M.Sc. Physical Chemistry, University of Delhi, India (2017)</p>
+    <p>B.Sc. (Honours) Chemistry, St. Stephens College, Delhi, India (2015)</p>
+
+    <h2 id="research">DESCRIPTION AND RESEARCH GOALS</h2>
+    <p>I am a Chemistry Doctorate with a broad range of interests in Computational Chemistry, Interfacial Chemistry, and Topological Data Analysis (TDA) and its applications in Machine Learning method development. I write codes for the analysis of complex data. I have 3 years of masters, 5 years of doctorate, and 1.5 years of postdoctoral research experience in topological data analysis, statistical mechanics, and method development for the analysis of complex chemical data. To do so, I used the tools of Applied Mathematics such as Network Theory, Algebraic topology and free energy methods. At PNNL, I studied the aggregation behavior of organic flow battery electrolytes within the Physical Biosciences group. Currently, I am affiliated with the Chemical Sciences Division at the Oak Ridge National Laboratory, specializing in fundamental chemistry at interfaces and supramolecular systems. My career aspirations are to conduct research in the analysis of complex data with AI applications.</p>
+    <br> What I work for: 100% clean energy, clean air and water, and new tools for complex data analysis.
+      
+    <h2>AREAS OF INTEREST</h2>
+    <p>Statistical Mechanics</p>
+    <p>Interfacial Phenomena</p>
+    <p>Advanced Energy Materials</p>
+    <p>Polymer and Soft Matter Chemistry</p>
+    <p>Computational Supramolecular Chemistry</p>
+    <p>Machine Learning and Method Development</p>
+    <p>Network Theory and Applied Topology</p>
+
+    <h2>AWARDS</h2>
+    <p>PNNL-WSU Distinguished Graduate Research (DGRP) Fellowship.</p>
+    <p>Crosby, Glenn A., and Jane L. Graduate Scholars Endowment fellowship 2022-2023 in Chemical Physics by Department of Chemistry, Washington State University.</p>
+    <p>J. Ivan Legg Fellowship 2021-2022 in Chemistry by College of Arts and Sciences (CAS), Washington State University, Pullman.</p>
+    <p>James C. Sullivan Memorial Fellowship 2019-2020 for graduate students working in Actinide Chemistry.</p>
+    <p>Harold W. Dodgen Outstanding Graduate Seminar Award 2019.</p>
+    <p>CSIR-NET-JRF Fellowship 2018.</p>
+    <p>DST INSPIRE Fellowship 2015.</p>
+    
+    <h2 id="publications">PUBLICATIONS</h2>
+    
+    <div class="publication-entry">
+        <div class="publication-figure">
+            <img src="images/pub_1.jpg" alt="Publication 1 Figure">
+        </div>
+        <div class="publication-text">
+            <p>Kumar, N., and Clark, A. E. <strong>Adsorbate Organization Characterized by Sublevelset Persistent Homology.</strong> Journal of Chemical Theory and Computation, 2023. DOI: <a href="https://pubs.acs.org/doi/full/10.1021/acs.jctc.3c00090">10.1021/acs.jctc.3c00090</a></p>
+        </div>
+    </div>
+    
+    <div class="publication-entry">
+        <div class="publication-figure">
+            <img src="images/pub_2.png" alt="Publication 2 Figure">
+        </div>
+        <div class="publication-text">
+            <p>Kumar, N., Clark, A. E. <strong>Unexpected Inverse Correlations and Cooperativity in Ion-pair Phase Transfer.</strong> Chemical Science, 2021. DOI: <a href="https://pubs.rsc.org/en/content/articlepdf/2021/sc/d1sc04004a">10.1039/D1SC04004A</a></p>
+        </div>
+    </div>
+    
+    <div class="publication-entry">
+        <div class="publication-figure">
+            <img src="images/pub_3.png" alt="Publication 3 Figure">
+        </div>
+        <div class="publication-text">
+            <p>Kumar, N., Rishko, W., Fiedler, K.R., Hollas, A., Chun, J. and Johnson, S.I. <strong>Correlations between Molecular Structure, Solvation Topology, and Transport Properties of Aqueous Organic Flow Battery Electrolyte Solutions.</strong> ACS Materials Letters, 2023. DOI: <a href="https://pubs.acs.org/doi/10.1021/acsmaterialslett.3c00838">10.1021/acsmaterialslett.3c00838</a></p>
+        </div>
+    </div>
+    
+    <div class="publication-entry">
+        <div class="publication-figure">
+            <img src="images/pub_4.png" alt="Publication 4 Figure">
+        </div>
+        <div class="publication-text">
+            <p>Kumar, N., Sadhu, B.; Clark, A. E. <strong>Essential Aspects of Solvent Effects and Solution Conditions Upon the Modeling and Simulation of Lanthanide and Actinide Complexes.</strong> in Computational Actinide and Lanthanide Chemistry, ed. Windus, T.; Pederson, C.; Penchoff, D. ACS Books, 2021. DOI: <a href="https://pubs.acs.org/doi/abs/10.1021/bk-2021-1388.ch012">10.1021/bk-2021-1388.ch012</a></p>
+        </div>
+    </div>
+    
+    <div class="publication-entry">
+        <div class="publication-figure">
+            <img src="images/pub_5.png" alt="Publication 5 Figure">
+        </div>
+        <div class="publication-text">
+            <p>Kumar, N., Servis, M.J., Liu, Z., and Clark, A.E. <strong>Competitive interactions at electrolyte/octanol interfaces: A molecular perspective.</strong> The Journal of Physical Chemistry C, 2020. DOI: <a href="https://pubs.acs.org/doi/full/10.1021/acs.jpcc.0c00302">10.1021/acs.jpcc.0c00302</a></p>
+        </div>
+    </div>
+    
+    <div class="publication-entry">
+        <div class="publication-figure">
+            <img src="images/pub_6.png" alt="Publication 6 Figure">
+        </div>
+        <div class="publication-text">
+            <p>Kumar, N., Servis, M.J. and Clark, A.E. <strong>Uranyl speciation in the presence of specific ion gradients at the electrolyte/organic interface.</strong> Solvent Extraction and Ion Exchange, 2022. DOI: <a href="https://www.tandfonline.com/doi/full/10.1080/07366299.2021.1954323">10.1080/07366299.2021.1954323</a></p>
+        </div>
+    </div>
+    
+    <div class="publication-entry">
+        <div class="publication-figure">
+            <img src="images/pub_8_2.png" alt="Publication 9 Figure">
+        </div>
+        <div class="publication-text">
+            <p>Kumar, N., <strong> Exclusive Ion Recognition Using Host-Guest Sandwich Complexes.</strong> RSC Physical Chemistry Chemical Physics, 2024. DOI: <a href="https://doi.org/10.1039/D3CP05070J">10.1039/D3CP05070J</a></p>
+        </div>
+    </div>
+    
+    <div class="publication-entry">
+        <div class="publication-figure">
+            <img src="images/pub_9.png" alt="Publication 10 Figure">
+        </div>
+        <div class="publication-text">
+            <p>Kumar, N., and Clark, A. <strong> Unexpected Effects of Surfactant Adsorption Upon Water/Vapor Surface Geometry and Fluctuations.</strong> ChemRxiv, 2023. DOI: <a href="https://doi.org/10.26434/chemrxiv-2023-x66jd">10.26434/chemrxiv-2023-x66jd</a></p>
+        </div>
+    </div>
+
+    <div class="publication-entry">
+      <div class="publication-figure">
+          <img src="images/pub_11.png" alt="Publication 11 Figure">
+      </div>
+      <div class="publication-text">
+          <p>Zarayeneh, N., Kumar, N., Kalyanaraman, A., Clark, A. E. <strong>Dynamic Community Detection Decouples Multiple Time Scale Behavior of Complex Chemical Systems.</strong> Journal of Chemical Theory and Computation, 2022. DOI: <a href="https://doi.org/10.1021/acs.jctc.2c00454">10.1021/acs.jctc.2c00454</a></p>
+      </div>
+    </div>
+
+    <div class="publication-entry">
+        <div class="publication-figure">
+            <img src="images/pub_7.png" alt="Publication 7 Figure">
+        </div>
+        <div class="publication-text">
+            <p>Hwang, I., Huang, S.Y., Smith, S., Lynch, V., Custelcean, R., Moyer, B.A., Kumar, N., Bryantsev, V.S. and Sessler, J.L. <strong>Direct Extraction of Sodium Hydroxide by Calix [4] pyrrole-Based Ion-Pair Receptors.</strong> Journal of the American Chemical Society, 2023. DOI: <a href="https://pubs.acs.org/doi/full/10.1021/jacs.3c03547">10.1021/jacs.3c03547</a></p>
+        </div>
+    </div>
+
+    <div class="publication-entry">
+        <div class="publication-figure">
+            <img src="images/pub_10.png" alt="Publication 10 Figure">
+        </div>
+        <div class="publication-text">
+            <p>Premadasa, U.I., Kumar, N., Zhu, Z., Stamberga, D., Li, T., Roy, S., Carrillo, J.M.Y., Einkauf, J.D., Custelcean, R., Ma, Y.Z. and Bocharova, V. <strong>Synergistic Assembly of Charged Oligomers and Amino Acids at the Air–Water Interface: An Avenue toward Surface-Directed CO2 Capture.</strong> ACS Applied Materials & Interfaces, 2024. DOI: <a href="https://pubs.acs.org/doi/abs/10.1021/acsami.3c18225">10.1021/acsami.3c18225</a></p>
+        </div>
+    </div>
+    
+    <!--<p>For a complete list and new publications please visit: <a href="https://www.researchgate.net/profile/Nitesh-Kumar-4">https://www.researchgate.net/profile/Nitesh-Kumar-4</a></p>--> 
+    
+    <style>
+      .publication-entry {
+          display: flex;
+          margin-bottom: 20px;
+          border-bottom: 1px solid #ddd;
+          padding-bottom: 20px;
+      }
+      .publication-figure {
+          flex: 1;
+          margin-right: 20px;
+      }
+      .publication-figure img {
+          width: 100%;
+          height: auto;
+          border: 0px solid black;
+      }
+      .publication-text {
+          flex: 2;
+      }
+      .publication-text p {
+          margin: 0;
+      }
+    </style>
+
+    
+
+    
+    <!-- Software Section -->
+    <h2 id="software">CODES AND DATASETS</h2>
+    <p>For codes and datasets please visit: <a href="https://github.com/KMNitesh05">https://github.com/KMNitesh05</a></p>
+    
+    <!-- Image insertion starts here -->
+    <!-- Science Illustration Section -->
+    <h2 id="science-illustration">SCIENCE ILLUSTRATION</h2>
+    <div style="width: 100%; border: 0px solid black;">
+        <img src="images/cover.png" style="width: 100%; height: auto; border: 2px solid black;">
+    </div>
+    <!-- Image insertion ends here -->
+
+    <!-- News Section -->
+    <h2 id="news">NEWS</h2>
+    <div class="twitter-timeline">
+      <a class="twitter-timeline" href="https://twitter.com/kmnitesh05?ref_src=twsrc%5Etfw">Tweets by kmnitesh05</a> 
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    <!-- News Section Ends here-->
+
+    <!-- <h2>Simplicial Complex Playground</h2> -->
+    <!-- <iframe src="simplicial_complex_on_points.html" width="800" height="700"></iframe> -->
+    <script>
+      const toggleButton = document.getElementById('theme-toggle');
+      toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+      });
+    </script>
+  </div>
+</body>
+</html>
