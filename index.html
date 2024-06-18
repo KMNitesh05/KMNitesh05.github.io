@@ -14,7 +14,13 @@
       color: #000;
       transition: background-color 0.5s, color 0.5s;
     }
-
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Prevent scrollbars */
+    }
+    
     #DynamicPointsCanvas {
       position: fixed;
       top: 0;
@@ -24,6 +30,7 @@
       z-index: -1; /* Ensure it is behind the content */
       pointer-events: none; /* Allow clicks to pass through */
     }
+
 
     h1, h2 {
       color: #004d99;
