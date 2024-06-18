@@ -14,7 +14,7 @@
       color: #000;
       transition: background-color 0.5s, color 0.5s;
     }
-    
+
     h1, h2 {
       color: #004d99;
     }
@@ -49,6 +49,7 @@
       background-color: white;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       position: relative;
+      z-index: 1; /* Ensure it is above the canvas */
     }
 
     .profile-photo {
@@ -116,26 +117,19 @@
       color: #b0b0b0; /* Keep navigation link color the same */
     }
 
-      
-      .profile-photo {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin: 20px auto;
-        border: 3px solid #004d99; /* Default border color */
-        transition: border-color 0.5s; /* Smooth transition for border color */
-      }
-      
-      .dark-mode .profile-photo {
-        border-color: #b0b0b0; /* Change border color to grey in dark mode */
-      }
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 20px auto;
+      border: 3px solid #004d99; /* Default border color */
+      transition: border-color 0.5s; /* Smooth transition for border color */
+    }
 
-    
     .dark-mode .profile-photo {
       border-color: #b0b0b0; /* Change border color to grey in dark mode */
     }
-
 
     .dark-mode .navigation {
       background: #333333;
@@ -179,6 +173,17 @@
         flex: 1 1 100%; /* Allow items to take full width if needed */
         margin: 5px 0; /* Adjust margin for better spacing */
       }
+    }
+
+    /* New styles for the background canvas */
+    #DynamicPointsCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0; /* Behind the content */
+      pointer-events: none; /* Allow clicks to pass through */
     }
   </style>
 </head>
@@ -390,9 +395,6 @@
       }
     </style>
 
-    
-
-    
     <!-- Software Section -->
     <h2 id="software">CODES AND DATASETS</h2>
     <p>For codes and datasets please visit: <a href="https://github.com/KMNitesh05">https://github.com/KMNitesh05</a></p>
@@ -422,5 +424,17 @@
       });
     </script>
   </div>
+
+  <!-- Dynamic Points Canvas -->
+  <canvas id="DynamicPointsCanvas"></canvas>
+  
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script language="javascript" src="JS/renderDynamicPoints.js"></script>
+  <script>
+    jQuery(document).ready(function() {
+      // Initialize the animation on document ready
+      initDynamicPoints();
+    });
+  </script>
 </body>
 </html>
